@@ -1,0 +1,19 @@
+# Template for application-local.properties
+# Copy this file to application-local.properties and fill in your actual values.
+# This local file is ignored by Git.
+
+# Database Configuration
+spring.data.mongodb.uri=mongodb://localhost:27017/studencollabfin
+
+# --- LinkedIn OAuth2 Client Configuration ---
+spring.security.oauth2.client.registration.linkedin.provider=linkedin
+spring.security.oauth2.client.registration.linkedin.client-id=YOUR_LINKEDIN_CLIENT_ID
+spring.security.oauth2.client.registration.linkedin.client-secret=YOUR_LINKEDIN_CLIENT_SECRET
+spring.security.oauth2.client.registration.linkedin.scope=openid,profile,email
+spring.security.oauth2.client.registration.linkedin.redirect-uri=http://localhost:8080/login/oauth2/code/linkedin
+spring.security.oauth2.client.registration.linkedin.authorization-grant-type=authorization_code
+
+spring.security.oauth2.client.provider.linkedin.authorization-uri=https://www.linkedin.com/oauth/v2/authorization
+spring.security.oauth2.client.provider.linkedin.token-uri=https://www.linkedin.com/oauth/v2/accessToken
+spring.security.oauth2.client.provider.linkedin.user-info-uri=https://api.linkedin.com/v2/userinfo
+spring.security.oauth2.client.provider.linkedin.user-name-attribute=sub
